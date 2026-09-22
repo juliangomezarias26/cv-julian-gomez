@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CV — Julián Gómez Arias</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: Arial, Helvetica, sans-serif; color: #111827; background: #e5e7eb; }
+  body { display: flex; flex-direction: column; align-items: center; padding: 24px 0; gap: 18px; }
+  .page { box-shadow: 0 3px 16px rgba(0,0,0,0.20); border-radius: 2px; }
+
+  .page { width: 210mm; height: 296mm; overflow: hidden; background: #fff; display: flex; }
+  .p1 { break-after: page; }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: 72mm;
+    background: #1a2b4a;
+    color: #e5e7eb;
+    padding: 11mm 7mm 12mm 8mm;
+    flex-shrink: 0;
+  }
+  .sidebar h2 {
+    color: #fff;
+    font-size: 10.5px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #3e5373;
+    padding-bottom: 1.6mm;
+    margin: 6mm 0 2.6mm 0;
+  }
+  .sidebar h2:first-child { margin-top: 0; }
+  .sidebar .contact-item {
+    font-size: 9px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 1.7mm;
+    word-break: break-word;
+  }
+  .sidebar .contact-item b { color: #fff; font-weight: 600; }
+  .sidebar ul { list-style: none; }
+  .sidebar ul li {
+    font-size: 8.6px;
+    color: #cbd5e1;
+    line-height: 1.4;
+    margin-bottom: 1.8mm;
+    padding-left: 4mm;
+    position: relative;
+  }
+  .sidebar ul li::before {
+    content: "▪";
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+    font-size: 7.5px;
+    top: 1px;
+  }
+  .sidebar .lang { font-size: 9px; color: #cbd5e1; line-height: 1.7; }
+  .sidebar .lang b { color: #fff; font-weight: 600; }
+  .sidebar .plain { font-size: 9px; color: #cbd5e1; line-height: 1.5; }
+
+  /* ===== MAIN ===== */
+  .main { flex: 1; padding: 10mm 8mm 9mm 9mm; }
+  .main header h1 {
+    font-size: 21px;
+    color: #1a2b4a;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin-bottom: 1.4mm;
+  }
+  .main header .role {
+    font-size: 9.5px;
+    color: #2563eb;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 5mm;
+  }
+  .main section { margin-bottom: 4.5mm; }
+  .main h2 {
+    font-size: 11px;
+    color: #1a2b4a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1.5px solid #1a2b4a;
+    padding-bottom: 1mm;
+    margin-bottom: 2.4mm;
+  }
+  .main p {
+    font-size: 9.2px;
+    color: #374151;
+    line-height: 1.45;
+    margin-bottom: 1.8mm;
+    text-align: justify;
+  }
+  .main ul { list-style: none; }
+  .main ul li {
+    font-size: 9.2px;
+    color: #374151;
+    line-height: 1.4;
+    margin-bottom: 1.3mm;
+    padding-left: 4mm;
+    position: relative;
+    text-align: justify;
+  }
+  .main ul li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-size: 6.5px;
+    top: 2px;
+  }
+  .comps { column-count: 2; column-gap: 4.5mm; }
+  .comps li { break-inside: avoid; margin-bottom: 1.2mm; }
+
+  .job { margin-bottom: 3.4mm; }
+  .job .job-head { margin-bottom: 0.8mm; }
+  .job .company { font-size: 10.5px; color: #1a2b4a; font-weight: 800; }
+  .job .cargo { font-size: 9.5px; color: #2563eb; font-weight: 700; }
+  .job .meta { font-size: 8.5px; color: #6b7280; }
+
+  .edu { margin-bottom: 2.2mm; }
+  .edu .inst { font-size: 10px; color: #1a2b4a; font-weight: 700; }
+  .edu .detail { font-size: 9px; color: #374151; line-height: 1.45; }
+
+  .ref { font-size: 9px; color: #374151; line-height: 1.55; }
+  .ref b { color: #1a2b4a; }
+
+  /* Responsive: en pantallas chicas apilar columnas */
+  @media (max-width: 820px) {
+    body { padding: 0; gap: 0; }
+    .page { width: 100%; height: auto; flex-direction: column; box-shadow: none; }
+    .sidebar { width: 100%; padding: 10mm 8mm; }
+    .main { width: 100%; padding: 10mm 8mm; }
+    .comps { column-count: 1; }
+    .main p, .main ul li { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= PÁGINA 1 ================= -->
+<div class="page p1">
+  <aside class="sidebar">
+    <h2>Contacto</h2>
+    <div class="contact-item"><b>Email</b><br>juliangomezarias26@gmail.com</div>
+    <div class="contact-item"><b>Teléfono</b><br>+57 319 232 0842</div>
+    <div class="contact-item"><b>Ubicación</b><br>Rionegro, Antioquia (Colombia)</div>
+    <div class="contact-item"><b>LinkedIn</b><br>linkedin.com/in/juliangomezarias26</div>
+
+    <h2>Habilidades y Herramientas</h2>
+    <ul>
+      <li>HubSpot Service Hub · SLA Management · Escalamiento técnico</li>
+      <li>CAC · Churn · ARPU · Conversión · Rentabilidad</li>
+      <li>Gestión B2B · Negociación · Mediación técnico-comercial</li>
+      <li>IA &amp; Agentes: prompt engineering, orquestación, LLMs</li>
+      <li>Voz clonada y asistentes de voz IA (ElevenLabs) · STT/TTS</li>
+      <li>Zapier · n8n · Make</li>
+      <li>HubSpot CRM · GoHighLevel · Prospección B2B</li>
+      <li>REST APIs · Postman · JSON · Webhooks · WhatsApp Business API</li>
+      <li>MongoDB Compass · SQL básico</li>
+      <li>Slack · Notion · Google Workspace · Office</li>
+    </ul>
+  </aside>
+
+  <main class="main">
+    <header>
+      <h1>JULIÁN GÓMEZ ARIAS</h1>
+      <div class="role">Service Manager · Gestión de Servicios TI<br>Liderazgo de Cuentas y Canales · SaaS B2B</div>
+    </header>
+
+    <section>
+      <h2>Perfil Profesional</h2>
+      <p>Profesional con más de 5 años de experiencia en gestión de servicios TI y operaciones B2B para plataformas SaaS, con foco en la gobernanza de acuerdos de servicio (SLA/OLA), el monitoreo de KPIs operativos y financieros, y el liderazgo de la relación con clientes empresariales.</p>
+      <p>Líder integral con doble enfoque: asegurar la viabilidad, rentabilidad y calidad del servicio (servicio al negocio) y velar por la experiencia, la habilitación y la continuidad operativa de clientes y equipos (servicio a las personas). Experiencia en estandarización de procesos, resolución de impedimentos, gestión del conocimiento y mejora continua en entornos SaaS B2B.</p>
+      <p>Autodidacta por convicción: incorporo de forma autónoma nuevas tecnologías (IA generativa, agentes y automatización) para optimizar la operación y ganar productividad.</p>
+    </section>
+
+    <section>
+      <h2>Competencias Clave</h2>
+      <ul class="comps">
+        <li><b>SLA Management</b> — definición, negociación y monitoreo de SLAs y OLAs.</li>
+        <li><b>Capacity Planning</b> — proyección y equilibrio de carga de trabajo y talento.</li>
+        <li><b>Monitoreo de KPIs</b> — desempeño operativo, satisfacción y planes de trabajo.</li>
+        <li><b>Gestión Financiera</b> — análisis de CAC, churn, ARPU y rentabilidad.</li>
+        <li><b>Riesgos y Mejora Continua</b> — prevención, mitigación y hallazgos.</li>
+        <li><b>Gestión del Conocimiento</b> — documentación técnica y estandarización.</li>
+        <li><b>Relacionamiento B2B</b> — satisfacción del cliente y negociación.</li>
+        <li><b>Resolución de Impedimentos</b> — incidencias operativas y escalamiento.</li>
+        <li><b>Onboarding y Desarrollo de Talento</b> — habilitación de equipos y canales.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experiencia Profesional</h2>
+      <div class="job">
+        <div class="job-head"><span class="company">GoEvery — GoShops</span> · <span class="cargo">Key Account Manager · Gestión de Cuentas y Servicio (SaaS)</span></div>
+        <div class="meta">Remoto · Mayo 2026 – Presente</div>
+        <ul>
+          <li>Gestiono el ciclo de vida completo del servicio GoShops para cada cuenta B2B — calificación, onboarding (demo y capacitación), adopción, cierre y reactivación — liderando la definición y el cumplimiento de los acuerdos de nivel de atención (SLA de respuesta y cadencia de seguimiento) y garantizando la satisfacción del cliente.</li>
+          <li>Monitoreo los KPIs de salud del servicio y de la cartera (conversión, CAC, churn, ARPU) y ejecuto el control administrativo y de trazabilidad de cada cuenta en CRM, asegurando el cumplimiento de los planes de trabajo y reportando resultados a la dirección.</li>
+          <li>Estandarizo y mejoro continuamente el proceso de atención (plantillas por escenario y automatización con IA), coordino con las unidades del ecosistema (GoAssistant, GoDelivery) la resolución de impedimentos del cliente, y lidero la habilitación de clientes mediante capacitaciones diarias y documentación del conocimiento.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ================= PÁGINA 2 ================= -->
+<div class="page p2">
+  <aside class="sidebar">
+    <h2>Idiomas</h2>
+    <div class="lang"><b>Español</b> — Nativo</div>
+    <div class="lang"><b>Inglés</b> — B1 (en formación intensiva)</div>
+
+    <h2>Aptitudes</h2>
+    <ul>
+      <li>Orientación a resultados</li>
+      <li>Comunicación efectiva</li>
+      <li>Trabajo en equipo</li>
+      <li>Aprendizaje continuo</li>
+      <li>Resolución de problemas</li>
+    </ul>
+
+    <h2>Formación y Certificaciones</h2>
+    <ul>
+      <li>Automatización con n8n / Make / Zapier — en curso</li>
+      <li>Inteligencia Artificial y automatización — autodidacta</li>
+      <li>HubSpot Service Hub &amp; CRM — HubSpot Academy</li>
+    </ul>
+
+    <h2>Disponibilidad</h2>
+    <div class="plain">Inmediata</div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <h1>JULIÁN GÓMEZ ARIAS</h1>
+      <div class="role">Experiencia Profesional (continuación) · Formación · Referencias</div>
+    </header>
+
+    <section>
+      <h2>Experiencia Profesional</h2>
+      <div class="job">
+        <div class="job-head"><span class="company">HIBOT</span> · <span class="cargo">Especialista en Gestión de Servicio TI</span></div>
+        <div class="meta">Remoto · Mayo 2023 – Abril 2026</div>
+        <ul>
+          <li>Lideré la gestión end-to-end del ciclo de soporte para +100 clientes empresariales activos en plataforma SaaS de bots conversacionales, garantizando SLA de respuesta inicial &lt; 2 minutos.</li>
+          <li>Monitoreé y reporté semanalmente KPIs de desempeño operativo al líder de área, asegurando trazabilidad completa del ciclo de servicio mediante HubSpot Service Hub.</li>
+          <li>Coordiné videollamadas técnicas proactivas con clientes estratégicos, logrando una reducción del 20% en tiempos de resolución mediante diagnóstico estructurado.</li>
+          <li>Desarrollé y documenté +5 artículos de base de conocimiento técnico, reduciendo tickets recurrentes en un 15% y mejorando la autonomía operativa de los clientes.</li>
+          <li>Administré cartera de +40 cuentas WhatsApp Business API: configuración inicial, monitoreo de entregabilidad y resolución de errores de integración (webhooks, tokens).</li>
+          <li>Actué como puente técnico-comercial: traduje necesidades complejas de clientes estratégicos en especificaciones claras para el equipo de desarrollo, garantizando soluciones de alto valor.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><span class="company">HIBOT</span> · <span class="cargo">Líder de Canales y Alianzas (Service Manager)</span></div>
+        <div class="meta">Remoto · Julio 2020 – Abril 2023</div>
+        <ul>
+          <li>Lideré el ciclo completo de gestión de +10 cuentas Partners: prospección, calificación, propuesta comercial, onboarding, fidelización y cobro.</li>
+          <li>Presenté el producto en demos a +30 clientes B2B potenciales/mes, logrando una tasa de cierre del 20% y generando ingresos a través de canales estratégicos.</li>
+          <li>Capacité y habilité +10 canales de distribución en el uso de la plataforma, reduciendo escalamientos al equipo de soporte y optimizando el rendimiento comercial.</li>
+          <li>Monitoreé KPIs de canal (CAC, Churn, ARPU, conversión) y elaboré reportes de feedback estructurado para los equipos de marketing y producto.</li>
+          <li>Funcioné como enlace estratégico entre partners, clientes y el equipo técnico-comercial, garantizando la alineación de acuerdos y la continuidad del servicio.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Formación Académica</h2>
+      <div class="edu">
+        <div class="inst">Universidad Católica de Oriente</div>
+        <div class="detail">Profesional en Comercio Exterior · Mención en Banking and Financial Support Services · 2009 – 2014</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Referencias</h2>
+      <div class="ref"><b>Alejandro Lopez</b> — Líder de Soporte Técnico · HiBot · (+57) 300 872 6297</div>
+      <div class="ref"><b>Duvan Palacio</b> — Desarrollador Web Front-End · (+57) 300 230 3432</div>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>
