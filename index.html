@@ -283,9 +283,11 @@
   // COMPARTIR
   const shareBtn = document.getElementById('shareBtn');
   const shareMenu = document.getElementById('shareMenu');
-  const url = encodeURIComponent(window.location.href);
-  document.getElementById('shareWa').href = 'https://wa.me/?text=' + url;
-  document.getElementById('shareMail').href = 'mailto:?subject=' + encodeURIComponent('CV Julián Gómez Arias') + '&body=' + url;
+  const base = window.location.href.split('#')[0];
+  const pdfUrl = base + 'CV_Julian_Gomez_ServiceManager.pdf';
+  const shareText = 'Te comparto mi CV — Julián Gómez Arias (Service Manager)\n\n• Web: ' + base + '\n• PDF: ' + pdfUrl;
+  document.getElementById('shareWa').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+  document.getElementById('shareMail').href = 'mailto:?subject=' + encodeURIComponent('CV Julián Gómez Arias') + '&body=' + encodeURIComponent(shareText);
   shareBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     shareMenu.classList.toggle('open');
