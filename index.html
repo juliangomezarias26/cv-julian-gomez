@@ -1,319 +1,363 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Julián Gómez Arias — Service Manager</title>
-<meta name="description" content="CV de Julián Gómez Arias — Service Manager · Gestión de Servicios TI · Liderazgo de Cuentas y Canales · SaaS B2B">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%231a2b4a'/><text x='32' y='43' font-family='Arial' font-size='28' font-weight='bold' fill='white' text-anchor='middle'>JG</text></svg>">
-<meta property="og:title" content="Julián Gómez Arias — Service Manager">
-<meta property="og:description" content="Gestión de Servicios TI · Liderazgo de Cuentas y Canales · SaaS B2B">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://juliangomezarias26.github.io/cv-julian-gomez/preview.png">
-<meta property="og:url" content="https://juliangomezarias26.github.io/cv-julian-gomez/">
+<meta name="description" content="Service Manager · Gestión de Servicios TI · Liderazgo de Cuentas y Canales · SaaS B2B">
 <style>
-  @page { size: A4; margin: 0; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { font-family: Arial, Helvetica, sans-serif; color: #111827; background: #e5e7eb; }
-  body { display: flex; flex-direction: column; align-items: center; padding: 24px 0; gap: 18px; }
-  .page { box-shadow: 0 3px 16px rgba(0,0,0,0.20); border-radius: 2px; }
+  :root {
+    --bg: #0b1220;
+    --bg-soft: #111a2e;
+    --card: #16233b;
+    --text: #e5eaf2;
+    --muted: #94a3b8;
+    --navy: #1a2b4a;
+    --blue: #2563eb;
+    --blue-soft: #60a5fa;
+    --line: #26344d;
+  }
+  [data-theme="light"] {
+    --bg: #f5f7fb;
+    --bg-soft: #ffffff;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #5b6472;
+    --line: #e2e8f0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background .4s, color .4s;
+    overflow-x: hidden;
+  }
+  a { color: var(--blue-soft); text-decoration:none; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 22px; }
 
-  .page { width: 210mm; height: 296mm; overflow: hidden; background: #fff; display: flex; }
-  .p1 { break-after: page; }
+  .ico { width:16px; height:16px; vertical-align:-2px; margin-right:7px; flex-shrink:0; }
 
-  /* ===== SIDEBAR ===== */
-  .sidebar {
-    width: 72mm;
-    background: #1a2b4a;
-    color: #e5e7eb;
-    padding: 11mm 7mm 12mm 8mm;
-    flex-shrink: 0;
+  .topbar {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    backdrop-filter: blur(10px);
+    background: rgba(11,18,32,.7);
+    border-bottom: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 12px 24px;
   }
-  .sidebar h2 {
-    color: #fff;
-    font-size: 10.5px;
-    letter-spacing: 1.1px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #3e5373;
-    padding-bottom: 1.6mm;
-    margin: 6mm 0 2.6mm 0;
+  [data-theme="light"] .topbar { background: rgba(255,255,255,.8); }
+  .topbar .brand { font-weight:800; letter-spacing:.5px; font-size:15px; }
+  .topbar .brand span { color: var(--blue-soft); }
+  .topbar nav a { margin-left:20px; font-size:14px; color:var(--muted); }
+  .topbar nav a:hover { color: var(--text); }
+  .theme-btn {
+    background:none; border:1px solid var(--line); color:var(--text);
+    border-radius: 20px; padding:6px 14px; cursor:pointer; font-size:14px;
+    display:flex; align-items:center; gap:6px;
   }
-  .sidebar h2:first-child { margin-top: 0; }
-  .sidebar .contact-item {
-    font-size: 9px;
-    color: #cbd5e1;
-    line-height: 1.5;
-    margin-bottom: 1.7mm;
-    word-break: break-word;
-  }
-  .sidebar .contact-item b { color: #fff; font-weight: 600; }
-  .sidebar ul { list-style: none; }
-  .sidebar ul li {
-    font-size: 8.6px;
-    color: #cbd5e1;
-    line-height: 1.4;
-    margin-bottom: 1.8mm;
-    padding-left: 4mm;
-    position: relative;
-  }
-  .sidebar ul li::before {
-    content: "▪";
-    position: absolute;
-    left: 0;
-    color: #60a5fa;
-    font-size: 7.5px;
-    top: 1px;
-  }
-  .sidebar .lang { font-size: 9px; color: #cbd5e1; line-height: 1.7; }
-  .sidebar .lang b { color: #fff; font-weight: 600; }
-  .sidebar .plain { font-size: 9px; color: #cbd5e1; line-height: 1.5; }
-  .sidebar a { color: #93c5fd; text-decoration: none; }
-  .sidebar a:hover { text-decoration: underline; }
+  .theme-btn:hover { border-color: var(--blue-soft); }
 
-  /* ===== MAIN ===== */
-  .main { flex: 1; padding: 10mm 8mm 9mm 9mm; }
-  .main header h1 {
-    font-size: 21px;
-    color: #1a2b4a;
-    letter-spacing: 1px;
-    font-weight: 800;
-    margin-bottom: 1.4mm;
+  .hero {
+    min-height: 92vh; display:flex; align-items:center; position:relative;
+    padding: 110px 0 60px;
+    background:
+      radial-gradient(circle at 80% 20%, rgba(37,99,235,.35), transparent 45%),
+      radial-gradient(circle at 10% 80%, rgba(96,165,250,.18), transparent 40%),
+      var(--bg);
   }
-  .main header .role {
-    font-size: 9.5px;
-    color: #2563eb;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
-    line-height: 1.4;
-    margin-bottom: 5mm;
+  .hero .wrap { display:flex; align-items:center; gap:48px; flex-wrap:wrap; }
+  .hero-avatar {
+    width: 150px; height:150px; border-radius:50%; flex-shrink:0;
+    box-shadow: 0 10px 40px rgba(37,99,235,.45);
+    border: 3px solid var(--blue-soft);
+    overflow:hidden;
   }
-  .main section { margin-bottom: 4.5mm; }
-  .main h2 {
-    font-size: 11px;
-    color: #1a2b4a;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1.5px solid #1a2b4a;
-    padding-bottom: 1mm;
-    margin-bottom: 2.4mm;
+  .hero-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+  .hero h1 { font-size: clamp(34px, 6vw, 58px); font-weight:800; letter-spacing:-1px; line-height:1.1; }
+  .hero h1 .accent { background: linear-gradient(90deg,#60a5fa,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero .role { font-size: 18px; color: var(--blue-soft); font-weight:600; margin-top:10px; }
+  .hero .lead { color: var(--muted); max-width: 620px; margin-top:16px; font-size:16px; }
+  .hero .cta { margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+  .btn {
+    display:inline-flex; align-items:center; padding:12px 22px; border-radius: 30px; font-weight:600; font-size:15px;
+    cursor:pointer; text-decoration:none; transition: transform .2s, box-shadow .2s;
+    border:none; font-family: inherit; gap:7px;
   }
-  .main p {
-    font-size: 9.2px;
-    color: #374151;
-    line-height: 1.45;
-    margin-bottom: 1.8mm;
-    text-align: justify;
-  }
-  .main ul { list-style: none; }
-  .main ul li {
-    font-size: 9.2px;
-    color: #374151;
-    line-height: 1.4;
-    margin-bottom: 1.3mm;
-    padding-left: 4mm;
-    position: relative;
-    text-align: justify;
-  }
-  .main ul li::before {
-    content: "■";
-    position: absolute;
-    left: 0;
-    color: #2563eb;
-    font-size: 6.5px;
-    top: 2px;
-  }
-  .comps { column-count: 2; column-gap: 4.5mm; }
-  .comps li { break-inside: avoid; margin-bottom: 1.2mm; }
+  .btn-primary { background: linear-gradient(90deg,#2563eb,#1d4ed8); color:#fff; box-shadow: 0 8px 24px rgba(37,99,235,.4); }
+  .btn-ghost { background:transparent; border:1px solid var(--line); color:var(--text); }
+  .btn:hover { transform: translateY(-2px); }
+  .scroll-hint { position:absolute; bottom:22px; left:50%; transform:translateX(-50%); color:var(--muted); font-size:20px; animation: bounce 2s infinite; }
 
-  .job { margin-bottom: 3.4mm; }
-  .job .job-head { margin-bottom: 0.8mm; }
-  .job .company { font-size: 10.5px; color: #1a2b4a; font-weight: 800; }
-  .job .cargo { font-size: 9.5px; color: #2563eb; font-weight: 700; }
-  .job .meta { font-size: 8.5px; color: #6b7280; }
-
-  .edu { margin-bottom: 2.2mm; }
-  .edu .inst { font-size: 10px; color: #1a2b4a; font-weight: 700; }
-  .edu .detail { font-size: 9px; color: #374151; line-height: 1.45; }
-
-  .ref { font-size: 9px; color: #374151; line-height: 1.55; }
-  .ref b { color: #1a2b4a; }
-
-  /* Boton de descarga flotante */
-  .dl-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #2563eb;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.30);
-    z-index: 999;
-    font-family: Arial, Helvetica, sans-serif;
+  /* dropdown compartir */
+  .share-dropdown { position:relative; display:inline-block; }
+  .share-menu {
+    position:absolute; top:calc(100% + 8px); left:0; min-width:230px;
+    background: var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:8px; display:none; z-index:50; box-shadow: 0 12px 32px rgba(0,0,0,.3);
   }
-  .dl-btn:hover { background: #1d4ed8; }
+  .share-menu.open { display:block; }
+  .share-menu a {
+    display:flex; align-items:center; gap:10px; padding:11px 13px; border-radius:8px;
+    color:var(--text); font-size:14px; font-weight:500;
+  }
+  .share-menu a:hover { background: var(--bg-soft); }
+  .share-menu a .ico { color: var(--blue-soft); }
 
-  /* Responsive: en pantallas chicas apilar columnas */
-  @media (max-width: 820px) {
-    body { padding: 0; gap: 0; }
-    .page { width: 100%; height: auto; flex-direction: column; box-shadow: none; }
-    .sidebar { width: 100%; padding: 10mm 8mm; }
-    .main { width: 100%; padding: 10mm 8mm; }
-    .comps { column-count: 1; }
-    .main p, .main ul li { text-align: left; }
+  section { padding: 70px 0; }
+  .section-title { font-size: 30px; font-weight:800; margin-bottom: 8px; letter-spacing:-.5px; }
+  .section-sub { color: var(--muted); margin-bottom: 34px; }
+  .card { background: var(--card); border:1px solid var(--line); border-radius:16px; padding: 26px; box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+
+  .reveal { opacity:0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+
+  .skill { margin-bottom: 20px; }
+  .skill .top { display:flex; justify-content:space-between; font-size:14px; font-weight:600; margin-bottom:6px; }
+  .skill .track { height:9px; background: var(--line); border-radius:6px; overflow:hidden; }
+  .skill .fill { height:100%; width:0; border-radius:6px; background: linear-gradient(90deg,#60a5fa,#2563eb); transition: width 1.4s cubic-bezier(.2,.7,.2,1); }
+  .skills-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 8px 34px; }
+
+  .timeline { position:relative; padding-left: 32px; }
+  .timeline::before { content:''; position:absolute; left:9px; top:4px; bottom:4px; width:2px; background: linear-gradient(#2563eb, #60a5fa); }
+  .tl-item { position:relative; margin-bottom: 34px; }
+  .tl-item::before { content:''; position:absolute; left:-32px; top:6px; width:18px; height:18px; border-radius:50%; background: var(--bg); border:3px solid #2563eb; }
+  .tl-item .date { color: var(--blue-soft); font-weight:700; font-size:13px; letter-spacing:.5px; text-transform:uppercase; }
+  .tl-item h3 { font-size: 20px; font-weight:800; }
+  .tl-item .cargo { font-weight:600; color: var(--blue-soft); }
+  .tl-item ul { margin-top:10px; padding-left:18px; color: var(--muted); }
+  .tl-item ul li { margin-bottom:6px; }
+
+  .chips { display:flex; flex-wrap:wrap; gap:10px; }
+  .chip { padding:8px 15px; border-radius: 30px; font-size:14px; background: var(--bg-soft); border:1px solid var(--line); color: var(--text); transition: transform .2s; }
+  .chip:hover { transform: translateY(-2px); border-color: var(--blue-soft); }
+
+  .contact-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:14px; }
+  .contact-item { display:flex; align-items:center; gap:10px; font-size:15px; }
+  .contact-item .ico { color: var(--blue-soft); }
+  .contact-item a { color: var(--text); }
+  .contact-item a:hover { color: var(--blue-soft); }
+
+  footer { text-align:center; padding: 40px 20px; color: var(--muted); font-size:14px; border-top:1px solid var(--line); }
+
+  @keyframes bounce { 0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,10px);} }
+  @media (max-width: 720px) {
+    .skills-grid { grid-template-columns: 1fr; }
+    .hero .wrap { gap: 26px; }
+    .topbar nav { display:none; }
   }
 </style>
 </head>
 <body>
 
-<!-- ================= PÁGINA 1 ================= -->
-<div class="page p1">
-  <aside class="sidebar">
-    <h2>Contacto</h2>
-    <div class="contact-item"><b>Email</b><br><a href="mailto:juliangomezarias26@gmail.com">juliangomezarias26@gmail.com</a></div>
-    <div class="contact-item"><b>Teléfono</b><br><a href="tel:+573192320842">+57 319 232 0842</a></div>
-    <div class="contact-item"><b>WhatsApp</b><br><a href="https://wa.me/573192320842" target="_blank">Escribir por WhatsApp</a></div>
-    <div class="contact-item"><b>Ubicación</b><br>Rionegro, Antioquia (Colombia)</div>
-    <div class="contact-item"><b>LinkedIn</b><br><a href="https://www.linkedin.com/in/juliangomezarias26" target="_blank">linkedin.com/in/juliangomezarias26</a></div>
-
-    <h2>Habilidades y Herramientas</h2>
-    <ul>
-      <li>HubSpot Service Hub · SLA Management · Escalamiento técnico</li>
-      <li>CAC · Churn · ARPU · Conversión · Rentabilidad</li>
-      <li>Gestión B2B · Negociación · Mediación técnico-comercial</li>
-      <li>IA &amp; Agentes: prompt engineering, orquestación, LLMs</li>
-      <li>Voz clonada y asistentes de voz IA (ElevenLabs) · STT/TTS</li>
-      <li>Zapier · n8n · Make</li>
-      <li>HubSpot CRM · GoHighLevel · Prospección B2B</li>
-      <li>REST APIs · Postman · JSON · Webhooks · WhatsApp Business API</li>
-      <li>MongoDB Compass · SQL básico</li>
-      <li>Slack · Notion · Google Workspace · Office</li>
-    </ul>
-  </aside>
-
-  <main class="main">
-    <header>
-      <h1>JULIÁN GÓMEZ ARIAS</h1>
-      <div class="role">Service Manager · Gestión de Servicios TI<br>Liderazgo de Cuentas y Canales · SaaS B2B</div>
-    </header>
-
-    <section>
-      <h2>Perfil Profesional</h2>
-      <p>Profesional con más de 5 años de experiencia en gestión de servicios TI y operaciones B2B para plataformas SaaS, con foco en la gobernanza de acuerdos de servicio (SLA/OLA), el monitoreo de KPIs operativos y financieros, y el liderazgo de la relación con clientes empresariales.</p>
-      <p>Líder integral con doble enfoque: asegurar la viabilidad, rentabilidad y calidad del servicio (servicio al negocio) y velar por la experiencia, la habilitación y la continuidad operativa de clientes y equipos (servicio a las personas). Experiencia en estandarización de procesos, resolución de impedimentos, gestión del conocimiento y mejora continua en entornos SaaS B2B.</p>
-      <p>Autodidacta por convicción: incorporo de forma autónoma nuevas tecnologías (IA generativa, agentes y automatización) para optimizar la operación y ganar productividad.</p>
-    </section>
-
-    <section>
-      <h2>Competencias Clave</h2>
-      <ul class="comps">
-        <li><b>SLA Management</b> — definición, negociación y monitoreo de SLAs y OLAs.</li>
-        <li><b>Capacity Planning</b> — proyección y equilibrio de carga de trabajo y talento.</li>
-        <li><b>Monitoreo de KPIs</b> — desempeño operativo, satisfacción y planes de trabajo.</li>
-        <li><b>Gestión Financiera</b> — análisis de CAC, churn, ARPU y rentabilidad.</li>
-        <li><b>Riesgos y Mejora Continua</b> — prevención, mitigación y hallazgos.</li>
-        <li><b>Gestión del Conocimiento</b> — documentación técnica y estandarización.</li>
-        <li><b>Relacionamiento B2B</b> — satisfacción del cliente y negociación.</li>
-        <li><b>Resolución de Impedimentos</b> — incidencias operativas y escalamiento.</li>
-        <li><b>Onboarding y Desarrollo de Talento</b> — habilitación de equipos y canales.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Experiencia Profesional</h2>
-      <div class="job">
-        <div class="job-head"><span class="company">GoEvery — GoShops</span> · <span class="cargo">Key Account Manager · Gestión de Cuentas y Servicio (SaaS)</span></div>
-        <div class="meta">Remoto · Mayo 2026 – Presente</div>
-        <ul>
-          <li>Gestiono el ciclo de vida completo del servicio GoShops para cada cuenta B2B — calificación, onboarding (demo y capacitación), adopción, cierre y reactivación — liderando la definición y el cumplimiento de los acuerdos de nivel de atención (SLA de respuesta y cadencia de seguimiento) y garantizando la satisfacción del cliente.</li>
-          <li>Monitoreo los KPIs de salud del servicio y de la cartera (conversión, CAC, churn, ARPU) y ejecuto el control administrativo y de trazabilidad de cada cuenta en CRM, asegurando el cumplimiento de los planes de trabajo y reportando resultados a la dirección.</li>
-          <li>Estandarizo y mejoro continuamente el proceso de atención (plantillas por escenario y automatización con IA), coordino con las unidades del ecosistema (GoAssistant, GoDelivery) la resolución de impedimentos del cliente, y lidero la habilitación de clientes mediante capacitaciones diarias y documentación del conocimiento.</li>
-        </ul>
-      </div>
-    </section>
-  </main>
+<div class="topbar">
+  <div class="brand">Julián <span>Gómez</span></div>
+  <nav>
+    <a href="#perfil">Perfil</a>
+    <a href="#skills">Skills</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <button class="theme-btn" id="themeToggle">
+    <svg class="ico" id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin:0;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <span id="themeLabel">Claro</span>
+  </button>
 </div>
 
-<!-- ================= PÁGINA 2 ================= -->
-<div class="page p2">
-  <aside class="sidebar">
-    <h2>Idiomas</h2>
-    <div class="lang"><b>Español</b> — Nativo</div>
-    <div class="lang"><b>Inglés</b> — B1 (en formación intensiva)</div>
-
-    <h2>Aptitudes</h2>
-    <ul>
-      <li>Orientación a resultados</li>
-      <li>Comunicación efectiva</li>
-      <li>Trabajo en equipo</li>
-      <li>Aprendizaje continuo</li>
-      <li>Resolución de problemas</li>
-    </ul>
-
-    <h2>Formación y Certificaciones</h2>
-    <ul>
-      <li>Automatización con n8n / Make / Zapier — en curso</li>
-      <li>Inteligencia Artificial y automatización — autodidacta</li>
-      <li>HubSpot Service Hub &amp; CRM — HubSpot Academy</li>
-    </ul>
-
-    <h2>Disponibilidad</h2>
-    <div class="plain">Inmediata</div>
-  </aside>
-
-  <main class="main">
-    <header>
-      <h1>JULIÁN GÓMEZ ARIAS</h1>
-      <div class="role">Experiencia Profesional (continuación) · Formación · Referencias</div>
-    </header>
-
-    <section>
-      <h2>Experiencia Profesional</h2>
-      <div class="job">
-        <div class="job-head"><span class="company">HIBOT</span> · <span class="cargo">Especialista en Gestión de Servicio TI</span></div>
-        <div class="meta">Remoto · Mayo 2023 – Abril 2026</div>
-        <ul>
-          <li>Lideré la gestión end-to-end del ciclo de soporte para +100 clientes empresariales activos en plataforma SaaS de bots conversacionales, garantizando SLA de respuesta inicial &lt; 2 minutos.</li>
-          <li>Monitoreé y reporté semanalmente KPIs de desempeño operativo al líder de área, asegurando trazabilidad completa del ciclo de servicio mediante HubSpot Service Hub.</li>
-          <li>Coordiné videollamadas técnicas proactivas con clientes estratégicos, logrando una reducción del 20% en tiempos de resolución mediante diagnóstico estructurado.</li>
-          <li>Desarrollé y documenté +5 artículos de base de conocimiento técnico, reduciendo tickets recurrentes en un 15% y mejorando la autonomía operativa de los clientes.</li>
-          <li>Administré cartera de +40 cuentas WhatsApp Business API: configuración inicial, monitoreo de entregabilidad y resolución de errores de integración (webhooks, tokens).</li>
-          <li>Actué como puente técnico-comercial: traduje necesidades complejas de clientes estratégicos en especificaciones claras para el equipo de desarrollo, garantizando soluciones de alto valor.</li>
-        </ul>
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-avatar"><img src="perfil.png" alt="Julián Gómez Arias"></div>
+    <div>
+      <h1>Julián <span class="accent">Gómez Arias</span></h1>
+      <div class="role">Service Manager · Gestión de Servicios TI · SaaS B2B</div>
+      <p class="lead">Liderazgo de cuentas y canales, gobernanza de SLAs y KPIs, e IA aplicada a la operación. +5 años ayudando a que los servicios TI escalen con calidad y rentabilidad.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#contacto">Contactame</a>
+        <div class="share-dropdown">
+          <button class="btn btn-ghost" id="shareBtn">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Descargar / Compartir
+          </button>
+          <div class="share-menu" id="shareMenu">
+            <a href="CV_Julian_Gomez_ServiceManager.pdf" download>
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Descargar PDF
+            </a>
+            <a href="#" id="shareWa" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              Enviar por WhatsApp
+            </a>
+            <a href="#" id="shareMail" target="_blank">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              Enviar por email
+            </a>
+          </div>
+        </div>
+        <a class="btn btn-ghost" href="#experiencia">Ver experiencia</a>
       </div>
+    </div>
+  </div>
+  <div class="scroll-hint">▾</div>
+</header>
 
-      <div class="job">
-        <div class="job-head"><span class="company">HIBOT</span> · <span class="cargo">Líder de Canales y Alianzas (Service Manager)</span></div>
-        <div class="meta">Remoto · Julio 2020 – Abril 2023</div>
-        <ul>
-          <li>Lideré el ciclo completo de gestión de +10 cuentas Partners: prospección, calificación, propuesta comercial, onboarding, fidelización y cobro.</li>
-          <li>Presenté el producto en demos a +30 clientes B2B potenciales/mes, logrando una tasa de cierre del 20% y generando ingresos a través de canales estratégicos.</li>
-          <li>Capacité y habilité +10 canales de distribución en el uso de la plataforma, reduciendo escalamientos al equipo de soporte y optimizando el rendimiento comercial.</li>
-          <li>Monitoreé KPIs de canal (CAC, Churn, ARPU, conversión) y elaboré reportes de feedback estructurado para los equipos de marketing y producto.</li>
-          <li>Funcioné como enlace estratégico entre partners, clientes y el equipo técnico-comercial, garantizando la alineación de acuerdos y la continuidad del servicio.</li>
-        </ul>
+<section id="perfil">
+  <div class="wrap">
+    <h2 class="section-title reveal">Perfil profesional</h2>
+    <p class="section-sub reveal">Lo que hago y cómo agrego valor</p>
+    <div class="card reveal">
+      <p>Profesional con <b>más de 5 años</b> de experiencia en gestión de servicios TI y operaciones B2B para plataformas SaaS. Líder integral con doble enfoque: asegurar la <b>viabilidad, rentabilidad y calidad del servicio</b> (servicio al negocio) y velar por la <b>experiencia, habilitación y continuidad</b> de clientes y equipos (servicio a las personas).</p>
+      <p style="margin-top:14px;">Autodidacta por convicción: incorporo <b>IA generativa, agentes y automatización</b> (n8n, Make, Zapier) para optimizar la operación y ganar productividad.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title reveal">Competencias clave</h2>
+    <p class="section-sub reveal">Nivel de dominio en las áreas del rol Service Manager</p>
+    <div class="card reveal">
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+    <h2 class="section-title reveal" style="margin-top:50px;">Herramientas y tecnologías</h2>
+    <p class="section-sub reveal">Con lo que trabajo a diario</p>
+    <div class="chips reveal" id="chips"></div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <h2 class="section-title reveal">Experiencia</h2>
+    <p class="section-sub reveal">Mi trayectoria</p>
+    <div class="card reveal">
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <h2 class="section-title reveal">Contacto</h2>
+    <p class="section-sub reveal">Hablemos</p>
+    <div class="card reveal">
+      <div class="contact-grid">
+        <div class="contact-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> <a href="mailto:juliangomezarias26@gmail.com">juliangomezarias26@gmail.com</a></div>
+        <div class="contact-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> <a href="tel:+573192320842">+57 319 232 0842</a></div>
+        <div class="contact-item"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> <a href="https://wa.me/573192320842" target="_blank">Escribir por WhatsApp</a></div>
+        <div class="contact-item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> Rionegro, Antioquia (Colombia)</div>
+        <div class="contact-item"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg> <a href="https://www.linkedin.com/in/juliangomezarias26" target="_blank">linkedin.com/in/juliangomezarias26</a></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>Formación Académica</h2>
-      <div class="edu">
-        <div class="inst">Universidad Católica de Oriente</div>
-        <div class="detail">Profesional en Comercio Exterior · Mención en Banking and Financial Support Services · 2009 – 2014</div>
-      </div>
-    </section>
+<footer>© 2026 Julián Gómez Arias — Service Manager</footer>
 
-    <section>
-      <h2>Referencias</h2>
-      <div class="ref"><b>Alejandro Lopez</b> — Líder de Soporte Técnico · HiBot · (+57) 300 872 6297</div>
-      <div class="ref"><b>Duvan Palacio</b> — Desarrollador Web Front-End · (+57) 300 230 3432</div>
-    </section>
-  </main>
-</div>
+<script>
+  // TEMA
+  const themeBtn = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+  const saved = localStorage.getItem('cv-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+  updateThemeBtn();
+  themeBtn.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('cv-theme', next);
+    updateThemeBtn();
+  });
+  function updateThemeBtn(){
+    const cur = document.documentElement.getAttribute('data-theme');
+    if (cur === 'dark') {
+      themeLabel.textContent = 'Claro';
+      themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+    } else {
+      themeLabel.textContent = 'Oscuro';
+      themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    }
+  }
 
-<a class="dl-btn" href="CV_Julian_Gomez_ServiceManager.pdf" download>⬇ Descargar PDF</a>
+  // COMPARTIR
+  const shareBtn = document.getElementById('shareBtn');
+  const shareMenu = document.getElementById('shareMenu');
+  const url = encodeURIComponent(window.location.href);
+  document.getElementById('shareWa').href = 'https://wa.me/?text=' + url;
+  document.getElementById('shareMail').href = 'mailto:?subject=' + encodeURIComponent('CV Julián Gómez Arias') + '&body=' + url;
+  shareBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    shareMenu.classList.toggle('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!shareMenu.contains(e.target) && !shareBtn.contains(e.target)) shareMenu.classList.remove('open');
+  });
+
+  // DATOS
+  const skills = [
+    ['SLA Management', 95],
+    ['Monitoreo de KPIs', 92],
+    ['Gestión de Cuentas B2B', 92],
+    ['CRM (HubSpot, GoHighLevel)', 90],
+    ['Resolución de Impedimentos', 90],
+    ['Gestión del Conocimiento', 88],
+    ['Gestión Financiera (CAC, Churn, ARPU)', 85],
+    ['IA y Automatización aplicada', 85],
+  ];
+  const tools = ['HubSpot Service Hub','GoHighLevel','WhatsApp Business API','REST APIs','Postman','JSON','Webhooks','MongoDB Compass','SQL','n8n','Make','Zapier','IA / LLMs','Prompt Engineering','Voz clonada (ElevenLabs)','Slack','Notion','Google Workspace','Microsoft Office'];
+
+  const jobs = [
+    { date:'Mayo 2026 — Actualidad', title:'GoEvery — GoShops', cargo:'Key Account Manager · Gestión de Cuentas y Servicio (SaaS)', items:[
+      'Gestiono el ciclo de vida completo del servicio GoShops para cuentas B2B: calificación, onboarding (demo y capacitación), adopción, cierre y reactivación, garantizando SLA de atención y satisfacción del cliente.',
+      'Monitoreo los KPIs de salud del servicio y de la cartera (conversión, CAC, churn, ARPU) con trazabilidad total en CRM y reporte a la dirección.',
+      'Estandarizo y mejoro el proceso de atención (plantillas por escenario y automatización con IA) y coordino la resolución de impedimentos con las unidades del ecosistema (GoAssistant, GoDelivery).'
+    ]},
+    { date:'Mayo 2023 — Abril 2026', title:'HIBOT', cargo:'Especialista en Gestión de Servicio TI', items:[
+      'Lideré el soporte end-to-end para +100 clientes empresariales en SaaS de bots conversacionales, con SLA de respuesta < 2 minutos.',
+      'Reduje 20% los tiempos de resolución y 15% los tickets recurrentes vía diagnóstico estructurado y base de conocimiento.',
+      'Administré +40 cuentas WhatsApp Business API y actué como puente técnico-comercial con clientes estratégicos.'
+    ]},
+    { date:'Julio 2020 — Abril 2023', title:'HIBOT', cargo:'Líder de Canales y Alianzas (Service Manager)', items:[
+      'Gestioné el ciclo completo de +10 cuentas Partners: prospección, calificación, propuesta, onboarding y fidelización.',
+      'Monitoreé KPIs de canal (CAC, churn, ARPU, conversión) y habilité +10 canales de distribución, reduciendo escalamientos a soporte.'
+    ]},
+  ];
+
+  const skillsGrid = document.getElementById('skillsGrid');
+  skills.forEach(s => {
+    const d = document.createElement('div');
+    d.className = 'skill';
+    d.innerHTML = `<div class="top"><span>${s[0]}</span><span>${s[1]}%</span></div><div class="track"><div class="fill" data-w="${s[1]}"></div></div>`;
+    skillsGrid.appendChild(d);
+  });
+  const chips = document.getElementById('chips');
+  tools.forEach(t => { const c = document.createElement('span'); c.className='chip'; c.textContent=t; chips.appendChild(c); });
+  const tl = document.getElementById('timeline');
+  jobs.forEach(j => {
+    const d = document.createElement('div');
+    d.className = 'tl-item reveal';
+    d.innerHTML = `<div class="date">${j.date}</div><h3>${j.title}</h3><div class="cargo">${j.cargo}</div><ul>${j.items.map(i=>`<li>${i}</li>`).join('')}</ul>`;
+    tl.appendChild(d);
+  });
+
+  // ANIMACIONES
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const skillsCard = document.querySelector('#skills .card');
+  const io2 = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.fill').forEach(f => { f.style.width = f.dataset.w + '%'; });
+        io2.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  io2.observe(skillsCard);
+</script>
 </body>
 </html>
